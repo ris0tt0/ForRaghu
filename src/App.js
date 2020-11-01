@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import Logger from 'js-logger';
+import React from 'react';
 import './App.css';
+import { MyComp } from './components/my-comp';
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+Logger.useDefaults();
+
+const testData = {
+	'1':{
+		values:'1-10'
+	},
+	'2':{
+		values:'11-20'
+	},
+	'3':{
+		values:'21-30'
+	},
+	'4':{
+		values:'31-40'
+	}
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+		 <MyComp data={testData} />
     </div>
   );
 }
 
 export default App;
+
